@@ -65,16 +65,17 @@ namespace GroceryStore.Core
                             new Product(
                                 reader.GetString(0),
                                 reader.GetString(1),
-                                reader.GetInt32(2)
+                                reader.GetInt32(3)
                             )
                             {
-                                Quantity = reader.GetInt32(3)
+                                Price = reader.GetInt32(2)
                             }
                         );
                     }
                 }
             }
 
+            Products = result;
             return result;
         }
 

@@ -6,4 +6,8 @@
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\GroceryStore.Core\GroceryStore.Core.csproj" />
+  </ItemGroup>
+
 </Project>

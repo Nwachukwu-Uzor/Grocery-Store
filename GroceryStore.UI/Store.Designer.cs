@@ -29,12 +29,16 @@ namespace GroceryStore.UI
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.DgvProducts = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -54,6 +58,11 @@ namespace GroceryStore.UI
             this.label12 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.DgvCart = new System.Windows.Forms.DataGridView();
+            this.Sn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.BtnAddProduct = new System.Windows.Forms.Button();
             this.BtnClear = new System.Windows.Forms.Button();
@@ -61,7 +70,7 @@ namespace GroceryStore.UI
             this.label10 = new System.Windows.Forms.Label();
             this.NUDQuantity = new System.Windows.Forms.NumericUpDown();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.TxtProductName = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
@@ -71,15 +80,6 @@ namespace GroceryStore.UI
             this.BtnRemove = new System.Windows.Forms.Button();
             this.BtnClearRemove = new System.Windows.Forms.Button();
             this.TxtProductId = new System.Windows.Forms.TextBox();
-            this.Sn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvProducts)).BeginInit();
@@ -141,18 +141,42 @@ namespace GroceryStore.UI
             this.Price});
             this.DgvProducts.Location = new System.Drawing.Point(0, 43);
             this.DgvProducts.Name = "DgvProducts";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvProducts.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvProducts.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.DgvProducts.RowHeadersWidth = 51;
             this.DgvProducts.RowTemplate.Height = 29;
             this.DgvProducts.Size = new System.Drawing.Size(560, 174);
             this.DgvProducts.TabIndex = 0;
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "ID";
+            this.Id.MinimumWidth = 6;
+            this.Id.Name = "Id";
+            // 
+            // pName
+            // 
+            this.pName.HeaderText = "NAME";
+            this.pName.MinimumWidth = 6;
+            this.pName.Name = "pName";
+            // 
+            // Quantity
+            // 
+            this.Quantity.HeaderText = "QUANTITY";
+            this.Quantity.MinimumWidth = 6;
+            this.Quantity.Name = "Quantity";
+            // 
+            // Price
+            // 
+            this.Price.HeaderText = "PRICE";
+            this.Price.MinimumWidth = 6;
+            this.Price.Name = "Price";
             // 
             // panel2
             // 
@@ -373,18 +397,48 @@ namespace GroceryStore.UI
             this.TotalPrice});
             this.DgvCart.Location = new System.Drawing.Point(0, 49);
             this.DgvCart.Name = "DgvCart";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvCart.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvCart.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.DgvCart.RowHeadersWidth = 51;
             this.DgvCart.RowTemplate.Height = 29;
             this.DgvCart.Size = new System.Drawing.Size(560, 168);
             this.DgvCart.TabIndex = 0;
+            // 
+            // Sn
+            // 
+            this.Sn.HeaderText = "S/N";
+            this.Sn.MinimumWidth = 6;
+            this.Sn.Name = "Sn";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "pNAME";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "QUANTITY";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "PRICE";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // TotalPrice
+            // 
+            this.TotalPrice.HeaderText = "TOTAL PRICE";
+            this.TotalPrice.MinimumWidth = 6;
+            this.TotalPrice.Name = "TotalPrice";
             // 
             // groupBox4
             // 
@@ -394,7 +448,7 @@ namespace GroceryStore.UI
             this.groupBox4.Controls.Add(this.label10);
             this.groupBox4.Controls.Add(this.NUDQuantity);
             this.groupBox4.Controls.Add(this.label9);
-            this.groupBox4.Controls.Add(this.textBox2);
+            this.groupBox4.Controls.Add(this.TxtProductName);
             this.groupBox4.Controls.Add(this.label8);
             this.groupBox4.Location = new System.Drawing.Point(41, 346);
             this.groupBox4.Name = "groupBox4";
@@ -415,6 +469,7 @@ namespace GroceryStore.UI
             this.BtnAddProduct.TabIndex = 7;
             this.BtnAddProduct.Text = "Add Product";
             this.BtnAddProduct.UseVisualStyleBackColor = false;
+            this.BtnAddProduct.Click += new System.EventHandler(this.BtnAddProduct_Click);
             // 
             // BtnClear
             // 
@@ -463,13 +518,13 @@ namespace GroceryStore.UI
             this.label9.TabIndex = 2;
             this.label9.Text = "Quantity";
             // 
-            // textBox2
+            // TxtProductName
             // 
-            this.textBox2.Location = new System.Drawing.Point(21, 80);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PlaceholderText = "Enter Product Name";
-            this.textBox2.Size = new System.Drawing.Size(170, 27);
-            this.textBox2.TabIndex = 1;
+            this.TxtProductName.Location = new System.Drawing.Point(21, 80);
+            this.TxtProductName.Name = "TxtProductName";
+            this.TxtProductName.PlaceholderText = "Enter Product Name";
+            this.TxtProductName.Size = new System.Drawing.Size(170, 27);
+            this.TxtProductName.TabIndex = 1;
             // 
             // label8
             // 
@@ -567,60 +622,6 @@ namespace GroceryStore.UI
             this.TxtProductId.Size = new System.Drawing.Size(170, 27);
             this.TxtProductId.TabIndex = 1;
             // 
-            // Sn
-            // 
-            this.Sn.HeaderText = "S/N";
-            this.Sn.MinimumWidth = 6;
-            this.Sn.Name = "Sn";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "pNAME";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "QUANTITY";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "PRICE";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // TotalPrice
-            // 
-            this.TotalPrice.HeaderText = "TOTAL PRICE";
-            this.TotalPrice.MinimumWidth = 6;
-            this.TotalPrice.Name = "TotalPrice";
-            // 
-            // Id
-            // 
-            this.Id.HeaderText = "ID";
-            this.Id.MinimumWidth = 6;
-            this.Id.Name = "Id";
-            // 
-            // pName
-            // 
-            this.pName.HeaderText = "NAME";
-            this.pName.MinimumWidth = 6;
-            this.pName.Name = "pName";
-            // 
-            // Quantity
-            // 
-            this.Quantity.HeaderText = "QUANTITY";
-            this.Quantity.MinimumWidth = 6;
-            this.Quantity.Name = "Quantity";
-            // 
-            // Price
-            // 
-            this.Price.HeaderText = "PRICE";
-            this.Price.MinimumWidth = 6;
-            this.Price.Name = "Price";
-            // 
             // Store
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -702,7 +703,7 @@ namespace GroceryStore.UI
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.NumericUpDown NUDQuantity;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox TxtProductName;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label7;
