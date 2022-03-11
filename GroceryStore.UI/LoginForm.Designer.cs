@@ -108,6 +108,7 @@ namespace GroceryStore.UI
             this.BtnLogin.TabIndex = 5;
             this.BtnLogin.Text = "Login";
             this.BtnLogin.UseVisualStyleBackColor = false;
+            this.BtnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
             // 
             // LoginForm
             // 

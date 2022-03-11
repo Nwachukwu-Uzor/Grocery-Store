@@ -1,9 +1,9 @@
-﻿using System;
+﻿using GroceryStore.Core.Contracts;
 using System.Collections.Generic;
 
 namespace GroceryStore.Core
 {
-    public class StoreList
+    public class StoreList : IStore
     {
         public List<Product> Products { get; set; }
 

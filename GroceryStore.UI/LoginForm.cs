@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using GroceryStore.Core;
+using System;
 using System.Windows.Forms;
 
 namespace GroceryStore.UI
@@ -17,5 +11,11 @@ namespace GroceryStore.UI
             InitializeComponent();
         }
 
+        private void BtnLogin_Click(object sender, EventArgs e)
+        {
+            var productStore = new StoreSQL();
+            var store = new Store(productStore);
+            store.Show();
+        }
     }
 }

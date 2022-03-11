@@ -1,9 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using GroceryStore.Core.Contracts;
+using System.Collections.Generic;
 using System.Data.SqlClient;
 
 namespace GroceryStore.Core
 {
-    public class StoreSQL
+    public class StoreSQL : IStore
     {
         SqlCommand cmd;
         SqlDataReader reader;
