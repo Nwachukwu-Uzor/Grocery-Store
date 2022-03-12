@@ -13,12 +13,14 @@ namespace GroceryStore.Core
 
         private readonly string _conn = @"Data Source=DESKTOP-9RCAP09\SQLEXPRESS;Initial Catalog=GroceryStore;Integrated Security=True";
         public List<Product> Products { get; set; }
+        public ICart Cart { get; set; }
 
         public double VAT { get; private set; }
 
-        public StoreSQL()
+        public StoreSQL(ICart cart)
         {
             Products = GetProducts();
+            Cart = cart;
         }
 
         public bool AddProduct(Product product)
@@ -159,6 +161,20 @@ namespace GroceryStore.Core
             }
 
             return wasPriceUpdateSuccessful;
+        }
+
+        public bool AddProductToCart(string id, int qty)
+        {
+            var product = Products.Find(item => item.Id == id);
+
+            if (product == null)
+            {
+                return false;
+            }
+
+            Cart.AddProduct(product.Id, product.Name, product.Price, qty);
+
+            return true;
         }
     }
 }

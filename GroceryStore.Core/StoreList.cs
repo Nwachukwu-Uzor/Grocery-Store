@@ -6,8 +6,14 @@ namespace GroceryStore.Core
     public class StoreList : IStore
     {
         public List<Product> Products { get; set; }
+        public ICart Cart { get; set; }
 
         public double VAT { get; private set; }
+
+        public StoreList(ICart cart)
+        {
+            Cart = cart;
+        }
 
         public bool AddProduct(Product product)
         {
@@ -82,6 +88,20 @@ namespace GroceryStore.Core
             }
 
             return wasPriceUpdateSuccessful;
+        }
+
+        public bool AddProductToCart(string id, int qty)
+        {
+            var product = Products.Find(item => item.Id == id);
+
+            if (product == null)
+            {
+                return false;
+            }
+
+            Cart.AddProduct(product.Id, product.Name, product.Price, qty);
+
+            return true;
         }
     }
 }

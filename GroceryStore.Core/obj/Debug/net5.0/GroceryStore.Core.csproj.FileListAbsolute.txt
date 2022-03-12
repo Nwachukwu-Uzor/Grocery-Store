@@ -9,3 +9,4 @@ C:\Users\UzorNwachukwu\Documents\GroceryStore\GroceryStore.Core\obj\Debug\net5.0
 C:\Users\UzorNwachukwu\Documents\GroceryStore\GroceryStore.Core\obj\Debug\net5.0\GroceryStore.Core.dll
 C:\Users\UzorNwachukwu\Documents\GroceryStore\GroceryStore.Core\obj\Debug\net5.0\ref\GroceryStore.Core.dll
 C:\Users\UzorNwachukwu\Documents\GroceryStore\GroceryStore.Core\obj\Debug\net5.0\GroceryStore.Core.pdb
+C:\Users\UzorNwachukwu\Documents\GroceryStore\GroceryStore.Core\obj\Debug\net5.0\GroceryStore.Core.csproj.AssemblyReference.cache

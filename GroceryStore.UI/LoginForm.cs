@@ -1,5 +1,6 @@
 ﻿using GroceryStore.Core;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace GroceryStore.UI
@@ -13,7 +14,8 @@ namespace GroceryStore.UI
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
-            var productStore = new StoreSQL();
+            var cart = new Cart(new List<Product>());
+            var productStore = new StoreSQL(cart);
             var store = new Store(productStore);
             store.Show();
         }

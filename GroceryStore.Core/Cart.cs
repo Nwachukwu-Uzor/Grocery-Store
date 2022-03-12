@@ -11,7 +11,7 @@ namespace GroceryStore.Core
     public class Cart : ICart
     {
         public List<Product> MyCart { get; set; }
-
+        public decimal TotalPrice { get; private set; }
         public Cart(List<Product> pCart)
         {
             MyCart = pCart;
@@ -23,7 +23,7 @@ namespace GroceryStore.Core
             return product ?? null;
         }
 
-        public Product AddProduct(string id, string name, decimal price, int quantity)
+        public void AddProduct(string id, string name, decimal price, int quantity)
         {
             string trimmedId = id.Trim();
             Product product = CheckProductInCart(trimmedId);
@@ -32,14 +32,29 @@ namespace GroceryStore.Core
             {
                 Product prod = new Product(id, name, quantity) { Price = price };
                 MyCart.Add(prod);
-                return prod;
+                return;
             }
-            else
+                
+            product.Quantity += quantity;
+
+            TotalPrice = CalculateTotalPrice();
+        }
+
+        public decimal CalculateTotalPrice()
+        {
+            decimal totalPrice = 0;
+
+            foreach(var item in MyCart)
             {
-                product.Quantity += quantity;
+                totalPrice += item.Quantity * item.Price;
             }
 
-            return product;
+            return totalPrice;
+        }
+
+        public void ClearCart()
+        {
+            MyCart.Clear();
         }
     }
 }

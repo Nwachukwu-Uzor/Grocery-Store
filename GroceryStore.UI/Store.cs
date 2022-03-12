@@ -1,13 +1,6 @@
 ﻿using GroceryStore.Core;
 using GroceryStore.Core.Contracts;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GroceryStore.UI
@@ -28,11 +21,24 @@ namespace GroceryStore.UI
 
         public void RenderProducts()
         {
-            DgvCart.Rows.Clear();
+            DgvProducts.Rows.Clear();
             foreach(var item in ProductStore.Products)
             {
                 DgvProducts.Rows.Add(item.Id, item.Name, item.Quantity, item.Price);
             }
+        }
+
+       public void RenderCart()
+        {
+            var sn = 0;
+            DgvCart.Rows.Clear();
+            foreach (var item in ProductStore.Cart.MyCart)
+            {
+                sn++;
+                DgvCart.Rows.Add(sn, item.Name, item.Quantity, item.Price, item.Price * item.Quantity);
+            }
+
+            LblTotalPrice.Text = ProductStore.Cart.TotalPrice.ToString();
         }
 
         public void AddProduct()
@@ -52,6 +58,42 @@ namespace GroceryStore.UI
             AddProduct();
             ProductStore.GetProducts();
             RenderProducts();
+        }
+
+        private void BtnSell_Click(object sender, EventArgs e)
+        {
+
+            var wasProductAdded = ProductStore.AddProductToCart(TxtProductSellId.Text, int.Parse(LblQty.Text));
+
+            if (!wasProductAdded)
+            {
+                MessageBox.Show("Invalid Product Id", "Error");
+                return;
+            }
+
+            MessageBox.Show("Product Added SuccessFully", "Success");
+            RenderCart();
+
+        }
+
+        private void BtnAdd_Click(object sender, EventArgs e)
+        {
+            var qty = int.Parse(LblQty.Text);
+            qty++;
+            LblQty.Text = qty.ToString();
+        }
+
+        private void BtnSubtract_Click(object sender, EventArgs e)
+        {
+            var qty = int.Parse(LblQty.Text);
+
+            if (qty > 0)
+            {
+                qty--;
+                LblQty.Text = qty.ToString();
+                return;
+            }
+            MessageBox.Show("Product Quantity Cannot be Less Than 0", "Error");
         }
     }
 }

@@ -29,8 +29,8 @@ namespace GroceryStore.UI
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -47,15 +47,17 @@ namespace GroceryStore.UI
             this.BtnAdd = new System.Windows.Forms.Button();
             this.BtnSubtract = new System.Windows.Forms.Button();
             this.LblQty = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TxtProductSellId = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.BtnCheckOut = new System.Windows.Forms.Button();
+            this.BtnClearCart = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.label12 = new System.Windows.Forms.Label();
+            this.LblTotalPrice = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.DgvCart = new System.Windows.Forms.DataGridView();
             this.Sn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -141,14 +143,14 @@ namespace GroceryStore.UI
             this.Price});
             this.DgvProducts.Location = new System.Drawing.Point(0, 43);
             this.DgvProducts.Name = "DgvProducts";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvProducts.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvProducts.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.DgvProducts.RowHeadersWidth = 51;
             this.DgvProducts.RowTemplate.Height = 29;
             this.DgvProducts.Size = new System.Drawing.Size(560, 174);
@@ -206,7 +208,7 @@ namespace GroceryStore.UI
             this.groupBox2.Controls.Add(this.BtnAdd);
             this.groupBox2.Controls.Add(this.BtnSubtract);
             this.groupBox2.Controls.Add(this.LblQty);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.TxtProductSellId);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.panel3);
             this.groupBox2.Location = new System.Drawing.Point(740, 438);
@@ -242,6 +244,7 @@ namespace GroceryStore.UI
             this.BtnSell.TabIndex = 5;
             this.BtnSell.Text = "Sell";
             this.BtnSell.UseVisualStyleBackColor = false;
+            this.BtnSell.Click += new System.EventHandler(this.BtnSell_Click);
             // 
             // BtnAdd
             // 
@@ -256,6 +259,7 @@ namespace GroceryStore.UI
             this.BtnAdd.TabIndex = 3;
             this.BtnAdd.Text = "+";
             this.BtnAdd.UseVisualStyleBackColor = false;
+            this.BtnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
             // 
             // BtnSubtract
             // 
@@ -270,6 +274,7 @@ namespace GroceryStore.UI
             this.BtnSubtract.TabIndex = 3;
             this.BtnSubtract.Text = "-";
             this.BtnSubtract.UseVisualStyleBackColor = false;
+            this.BtnSubtract.Click += new System.EventHandler(this.BtnSubtract_Click);
             // 
             // LblQty
             // 
@@ -281,13 +286,13 @@ namespace GroceryStore.UI
             this.LblQty.TabIndex = 3;
             this.LblQty.Text = "0";
             // 
-            // textBox1
+            // TxtProductSellId
             // 
-            this.textBox1.Location = new System.Drawing.Point(29, 83);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.PlaceholderText = "Enter Product ID";
-            this.textBox1.Size = new System.Drawing.Size(232, 27);
-            this.textBox1.TabIndex = 5;
+            this.TxtProductSellId.Location = new System.Drawing.Point(29, 83);
+            this.TxtProductSellId.Name = "TxtProductSellId";
+            this.TxtProductSellId.PlaceholderText = "Enter Product ID";
+            this.TxtProductSellId.Size = new System.Drawing.Size(232, 27);
+            this.TxtProductSellId.TabIndex = 5;
             // 
             // label4
             // 
@@ -342,35 +347,63 @@ namespace GroceryStore.UI
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.BtnCheckOut);
+            this.groupBox3.Controls.Add(this.BtnClearCart);
             this.groupBox3.Controls.Add(this.panel5);
             this.groupBox3.Controls.Add(this.DgvCart);
             this.groupBox3.Location = new System.Drawing.Point(740, 96);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(560, 293);
+            this.groupBox3.Size = new System.Drawing.Size(560, 321);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "groupBox3";
             // 
+            // BtnCheckOut
+            // 
+            this.BtnCheckOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.BtnCheckOut.FlatAppearance.BorderSize = 0;
+            this.BtnCheckOut.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnCheckOut.ForeColor = System.Drawing.Color.White;
+            this.BtnCheckOut.Location = new System.Drawing.Point(426, 275);
+            this.BtnCheckOut.Name = "BtnCheckOut";
+            this.BtnCheckOut.Size = new System.Drawing.Size(134, 29);
+            this.BtnCheckOut.TabIndex = 9;
+            this.BtnCheckOut.Text = "Checkout";
+            this.BtnCheckOut.UseVisualStyleBackColor = false;
+            // 
+            // BtnClearCart
+            // 
+            this.BtnClearCart.BackColor = System.Drawing.Color.Maroon;
+            this.BtnClearCart.FlatAppearance.BorderSize = 0;
+            this.BtnClearCart.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnClearCart.ForeColor = System.Drawing.Color.White;
+            this.BtnClearCart.Location = new System.Drawing.Point(292, 273);
+            this.BtnClearCart.Name = "BtnClearCart";
+            this.BtnClearCart.Size = new System.Drawing.Size(94, 29);
+            this.BtnClearCart.TabIndex = 8;
+            this.BtnClearCart.Text = "Clear";
+            this.BtnClearCart.UseVisualStyleBackColor = false;
+            // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Black;
-            this.panel5.Controls.Add(this.label12);
+            this.panel5.Controls.Add(this.LblTotalPrice);
             this.panel5.Controls.Add(this.label6);
-            this.panel5.Location = new System.Drawing.Point(0, 250);
+            this.panel5.Location = new System.Drawing.Point(0, 217);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(560, 43);
             this.panel5.TabIndex = 4;
             // 
-            // label12
+            // LblTotalPrice
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(509, 10);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(20, 23);
-            this.label12.TabIndex = 1;
-            this.label12.Text = "0";
+            this.LblTotalPrice.AutoSize = true;
+            this.LblTotalPrice.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.LblTotalPrice.ForeColor = System.Drawing.Color.White;
+            this.LblTotalPrice.Location = new System.Drawing.Point(509, 10);
+            this.LblTotalPrice.Name = "LblTotalPrice";
+            this.LblTotalPrice.Size = new System.Drawing.Size(20, 23);
+            this.LblTotalPrice.TabIndex = 1;
+            this.LblTotalPrice.Text = "0";
             // 
             // label6
             // 
@@ -397,14 +430,14 @@ namespace GroceryStore.UI
             this.TotalPrice});
             this.DgvCart.Location = new System.Drawing.Point(0, 49);
             this.DgvCart.Name = "DgvCart";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvCart.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvCart.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.DgvCart.RowHeadersWidth = 51;
             this.DgvCart.RowTemplate.Height = 29;
             this.DgvCart.Size = new System.Drawing.Size(560, 168);
@@ -618,7 +651,7 @@ namespace GroceryStore.UI
             // 
             this.TxtProductId.Location = new System.Drawing.Point(21, 69);
             this.TxtProductId.Name = "TxtProductId";
-            this.TxtProductId.PlaceholderText = "Enter Product Name";
+            this.TxtProductId.PlaceholderText = "Enter Product ID";
             this.TxtProductId.Size = new System.Drawing.Size(170, 27);
             this.TxtProductId.TabIndex = 1;
             // 
@@ -685,7 +718,7 @@ namespace GroceryStore.UI
         private System.Windows.Forms.Button BtnAdd;
         private System.Windows.Forms.Button BtnSubtract;
         private System.Windows.Forms.Label LblQty;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TxtProductSellId;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label3;
@@ -713,7 +746,7 @@ namespace GroceryStore.UI
         private System.Windows.Forms.Button BtnRemove;
         private System.Windows.Forms.Button BtnClearRemove;
         private System.Windows.Forms.TextBox TxtProductId;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label LblTotalPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn pName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
@@ -723,5 +756,7 @@ namespace GroceryStore.UI
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalPrice;
+        private System.Windows.Forms.Button BtnCheckOut;
+        private System.Windows.Forms.Button BtnClearCart;
     }
 }

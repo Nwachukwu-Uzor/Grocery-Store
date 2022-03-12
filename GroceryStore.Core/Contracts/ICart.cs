@@ -6,7 +6,11 @@ namespace GroceryStore.Core.Contracts
     {
         List<Product> MyCart { get; set; }
 
-        Product AddProduct(string id, string name, decimal price, int quantity);
+        decimal TotalPrice { get; }
+        void AddProduct(string id, string name, decimal price, int quantity);
         Product CheckProductInCart(string id);
+
+        decimal CalculateTotalPrice();
+        void ClearCart();
     }
 }
