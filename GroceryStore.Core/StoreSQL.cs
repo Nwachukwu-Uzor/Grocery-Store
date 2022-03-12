@@ -118,7 +118,6 @@ namespace GroceryStore.Core
 
         public bool RemoveProduct(string id)
         {
-            bool wasProductRemovalSuccessful = false;
 
             sql = $"delete from products where Id='{id}'";
 
@@ -130,11 +129,11 @@ namespace GroceryStore.Core
 
                 if (rows > 0)
                 {
-                    wasProductRemovalSuccessful = true;
+                    return true;
                 }
             }
 
-            return wasProductRemovalSuccessful;
+            return false;
         }
 
         public void SetVAT(double newVAT)

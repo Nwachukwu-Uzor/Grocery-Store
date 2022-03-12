@@ -3,6 +3,7 @@ using System.Windows.Forms;
 
 using GroceryStore.Core;
 using GroceryStore.Core.Contracts;
+using GroceryStore.Core.Enums;
 using GroceryStore.Commons;
 using System.Text;
 
@@ -10,16 +11,27 @@ namespace GroceryStore.UI
 {
     public partial class Store : Form
     {
-        IStore ProductStore { get; set; }
+        IStore ProductStore { get; }
+        IUser User { get; }
         public Store()
         {
             InitializeComponent();
         }
 
-        public Store(IStore store) : this()
+        public Store(IStore store, IUser user) : this()
         {
             ProductStore = store;
+            User = user;
+            ShowUserDetails();
             RenderProducts();
+        }
+
+        public void ShowUserDetails()
+        {
+            LblUsername.Text = User.Name;
+            LblRole.Text = User.Role == Role.Admin ? "Admin" : "Staff";
+            GbAddProduct.Visible = User.Role == Role.Admin;
+            GbRemoveProducts.Visible = User.Role == Role.Admin;
         }
 
         public void RenderProducts()
@@ -168,6 +180,20 @@ namespace GroceryStore.UI
         {
             TxtProductSellId.Text = "";
             LblQty.Text = "0";
+        }
+
+        private void BtnRemove_Click(object sender, EventArgs e)
+        {
+            var wasProductRemoved = ProductStore.RemoveProduct(TxtProductId.Text);
+
+            if (!wasProductRemoved)
+            {
+                MessageBox.Show("Invalid ProductId", "Error");
+                return;
+            }
+
+            MessageBox.Show("Product Removed Successfully", "Success");
+            RenderProducts();
         }
     }
 }

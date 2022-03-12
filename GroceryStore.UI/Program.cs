@@ -1,8 +1,7 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+
+using GroceryStore.Core;
 
 namespace GroceryStore.UI
 {
@@ -17,7 +16,7 @@ namespace GroceryStore.UI
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm());
+            Application.Run(new LoginForm(new AuthenticateSQL()));
         }
     }
 }
