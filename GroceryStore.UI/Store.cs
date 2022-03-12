@@ -1,7 +1,10 @@
-﻿using GroceryStore.Core;
-using GroceryStore.Core.Contracts;
-using System;
+﻿using System;
 using System.Windows.Forms;
+
+using GroceryStore.Core;
+using GroceryStore.Core.Contracts;
+using GroceryStore.Commons;
+using System.Text;
 
 namespace GroceryStore.UI
 {
@@ -22,7 +25,8 @@ namespace GroceryStore.UI
         public void RenderProducts()
         {
             DgvProducts.Rows.Clear();
-            foreach(var item in ProductStore.Products)
+            ProductStore.GetProducts();
+            foreach (var item in ProductStore.Products)
             {
                 DgvProducts.Rows.Add(item.Id, item.Name, item.Quantity, item.Price);
             }
@@ -51,6 +55,7 @@ namespace GroceryStore.UI
                 return;
             }
             MessageBox.Show("Product successfull added");
+            RenderProducts();
         }
 
         private void BtnAddProduct_Click(object sender, EventArgs e)
@@ -94,6 +99,42 @@ namespace GroceryStore.UI
                 return;
             }
             MessageBox.Show("Product Quantity Cannot be Less Than 0", "Error");
+        }
+
+        private void BtnCheckOut_Click(object sender, EventArgs e)
+        {
+            string receiptContent = PopulateReceiptContent();
+            string formatEnd = Guid.NewGuid().ToString().Substring(0, 10);
+            string printPath = $@"C:\Users\UzorNwachukwu\Documents\C# Playground\GroceryStoreReceipts\receipt{formatEnd}.txt";
+
+            if (receiptContent != "")
+            {
+                receiptContent += $"\n Total Price: {TotalPrice}";
+                FileHandler.PrintFile(receiptContent, printPath);
+                ProductStore.ReduceProductQuantityOnCheckOut(ProductStore.Cart.MyCart);
+                MessageBox.Show($"Receipt successfull printed to {printPath}");
+                ProductStore.Cart.ClearCart();
+                RenderCart();
+                RenderProducts();
+                return;
+            }
+
+            MessageBox.Show("Cart is empty");
+        }
+
+        private string PopulateReceiptContent()
+        {
+            var receiptContent = new StringBuilder();
+            int count = 1;
+
+            foreach (var item in ProductStore.Cart.MyCart)
+            {
+                receiptContent.AppendLine($"" +
+                    $"{count} - Name: {item.Name} \r Quantity: {item.Quantity} \r Unit Price: {item.Price} \r" +
+                    $"Total Price: {item.Price * item.Quantity}");
+            }
+
+            return receiptContent.ToString();
         }
     }
 }

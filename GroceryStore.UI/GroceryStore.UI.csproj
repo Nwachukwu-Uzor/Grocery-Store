@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\GroceryStore.Commons\GroceryStore.Commons.csproj" />
     <ProjectReference Include="..\GroceryStore.Core\GroceryStore.Core.csproj" />
   </ItemGroup>
 

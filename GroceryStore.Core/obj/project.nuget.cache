@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rE+UeTv+KWjblDbwXUEmR3ZRiT4G+6ysNUIBgy6RwMdRodg9lLPcILpo4rPUD0TwYJZ50reO5EmJ91e2DtqyzA==",
+  "dgSpecHash": "znOzq16GY+u7K7h0DOK1TCa4JJBaMx43bKJPKH/qHULNUrUgpoMTgAEjRf/Qmy+Xq/LkPV3nAQqSHRFKF9DmIw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\UzorNwachukwu\\Documents\\GroceryStore\\GroceryStore.Core\\GroceryStore.Core.csproj",
+  "projectFilePath": "C:\\Users\\UzorNwachukwu\\Documents\\C# Playground\\GroceryStore\\GroceryStore.Core\\GroceryStore.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\UzorNwachukwu\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\UzorNwachukwu\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",

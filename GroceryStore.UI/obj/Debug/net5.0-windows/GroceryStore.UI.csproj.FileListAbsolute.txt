@@ -26,3 +26,33 @@ C:\Users\UzorNwachukwu\Documents\GroceryStore\GroceryStore.UI\bin\Debug\net5.0-w
 C:\Users\UzorNwachukwu\Documents\GroceryStore\GroceryStore.UI\bin\Debug\net5.0-windows\GroceryStore.Core.dll
 C:\Users\UzorNwachukwu\Documents\GroceryStore\GroceryStore.UI\bin\Debug\net5.0-windows\GroceryStore.Core.pdb
 C:\Users\UzorNwachukwu\Documents\GroceryStore\GroceryStore.UI\obj\Debug\net5.0-windows\GroceryStore.UI.csproj.CopyComplete
+C:\Users\UzorNwachukwu\Documents\C# Playground\GroceryStore\GroceryStore.UI\bin\Debug\net5.0-windows\GroceryStore.UI.exe
+C:\Users\UzorNwachukwu\Documents\C# Playground\GroceryStore\GroceryStore.UI\bin\Debug\net5.0-windows\GroceryStore.UI.deps.json
+C:\Users\UzorNwachukwu\Documents\C# Playground\GroceryStore\GroceryStore.UI\bin\Debug\net5.0-windows\GroceryStore.UI.runtimeconfig.json
+C:\Users\UzorNwachukwu\Documents\C# Playground\GroceryStore\GroceryStore.UI\bin\Debug\net5.0-windows\GroceryStore.UI.runtimeconfig.dev.json
+C:\Users\UzorNwachukwu\Documents\C# Playground\GroceryStore\GroceryStore.UI\bin\Debug\net5.0-windows\GroceryStore.UI.dll
+C:\Users\UzorNwachukwu\Documents\C# Playground\GroceryStore\GroceryStore.UI\bin\Debug\net5.0-windows\ref\GroceryStore.UI.dll
+C:\Users\UzorNwachukwu\Documents\C# Playground\GroceryStore\GroceryStore.UI\bin\Debug\net5.0-windows\GroceryStore.UI.pdb
+C:\Users\UzorNwachukwu\Documents\C# Playground\GroceryStore\GroceryStore.UI\bin\Debug\net5.0-windows\System.Data.SqlClient.dll
+C:\Users\UzorNwachukwu\Documents\C# Playground\GroceryStore\GroceryStore.UI\bin\Debug\net5.0-windows\runtimes\win-arm64\native\sni.dll
+C:\Users\UzorNwachukwu\Documents\C# Playground\GroceryStore\GroceryStore.UI\bin\Debug\net5.0-windows\runtimes\win-x64\native\sni.dll
+C:\Users\UzorNwachukwu\Documents\C# Playground\GroceryStore\GroceryStore.UI\bin\Debug\net5.0-windows\runtimes\win-x86\native\sni.dll
+C:\Users\UzorNwachukwu\Documents\C# Playground\GroceryStore\GroceryStore.UI\bin\Debug\net5.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\UzorNwachukwu\Documents\C# Playground\GroceryStore\GroceryStore.UI\bin\Debug\net5.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\UzorNwachukwu\Documents\C# Playground\GroceryStore\GroceryStore.UI\bin\Debug\net5.0-windows\GroceryStore.Commons.dll
+C:\Users\UzorNwachukwu\Documents\C# Playground\GroceryStore\GroceryStore.UI\bin\Debug\net5.0-windows\GroceryStore.Core.dll
+C:\Users\UzorNwachukwu\Documents\C# Playground\GroceryStore\GroceryStore.UI\bin\Debug\net5.0-windows\GroceryStore.Commons.pdb
+C:\Users\UzorNwachukwu\Documents\C# Playground\GroceryStore\GroceryStore.UI\bin\Debug\net5.0-windows\GroceryStore.Core.pdb
+C:\Users\UzorNwachukwu\Documents\C# Playground\GroceryStore\GroceryStore.UI\obj\Debug\net5.0-windows\GroceryStore.UI.csproj.AssemblyReference.cache
+C:\Users\UzorNwachukwu\Documents\C# Playground\GroceryStore\GroceryStore.UI\obj\Debug\net5.0-windows\GroceryStore.UI.LoginForm.resources
+C:\Users\UzorNwachukwu\Documents\C# Playground\GroceryStore\GroceryStore.UI\obj\Debug\net5.0-windows\GroceryStore.UI.Store.resources
+C:\Users\UzorNwachukwu\Documents\C# Playground\GroceryStore\GroceryStore.UI\obj\Debug\net5.0-windows\GroceryStore.UI.csproj.GenerateResource.cache
+C:\Users\UzorNwachukwu\Documents\C# Playground\GroceryStore\GroceryStore.UI\obj\Debug\net5.0-windows\GroceryStore.UI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\UzorNwachukwu\Documents\C# Playground\GroceryStore\GroceryStore.UI\obj\Debug\net5.0-windows\GroceryStore.UI.AssemblyInfoInputs.cache
+C:\Users\UzorNwachukwu\Documents\C# Playground\GroceryStore\GroceryStore.UI\obj\Debug\net5.0-windows\GroceryStore.UI.AssemblyInfo.cs
+C:\Users\UzorNwachukwu\Documents\C# Playground\GroceryStore\GroceryStore.UI\obj\Debug\net5.0-windows\GroceryStore.UI.csproj.CoreCompileInputs.cache
+C:\Users\UzorNwachukwu\Documents\C# Playground\GroceryStore\GroceryStore.UI\obj\Debug\net5.0-windows\GroceryStore.UI.csproj.CopyComplete
+C:\Users\UzorNwachukwu\Documents\C# Playground\GroceryStore\GroceryStore.UI\obj\Debug\net5.0-windows\GroceryStore.UI.dll
+C:\Users\UzorNwachukwu\Documents\C# Playground\GroceryStore\GroceryStore.UI\obj\Debug\net5.0-windows\ref\GroceryStore.UI.dll
+C:\Users\UzorNwachukwu\Documents\C# Playground\GroceryStore\GroceryStore.UI\obj\Debug\net5.0-windows\GroceryStore.UI.pdb
+C:\Users\UzorNwachukwu\Documents\C# Playground\GroceryStore\GroceryStore.UI\obj\Debug\net5.0-windows\GroceryStore.UI.genruntimeconfig.cache

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\UzorNwachukwu\\Documents\\GroceryStore\\GroceryStore.Core\\GroceryStore.Core.csproj": {}
+    "C:\\Users\\UzorNwachukwu\\Documents\\C# Playground\\GroceryStore\\GroceryStore.Core\\GroceryStore.Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\UzorNwachukwu\\Documents\\GroceryStore\\GroceryStore.Core\\GroceryStore.Core.csproj": {
+    "C:\\Users\\UzorNwachukwu\\Documents\\C# Playground\\GroceryStore\\GroceryStore.Core\\GroceryStore.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\UzorNwachukwu\\Documents\\GroceryStore\\GroceryStore.Core\\GroceryStore.Core.csproj",
+        "projectUniqueName": "C:\\Users\\UzorNwachukwu\\Documents\\C# Playground\\GroceryStore\\GroceryStore.Core\\GroceryStore.Core.csproj",
         "projectName": "GroceryStore.Core",
-        "projectPath": "C:\\Users\\UzorNwachukwu\\Documents\\GroceryStore\\GroceryStore.Core\\GroceryStore.Core.csproj",
+        "projectPath": "C:\\Users\\UzorNwachukwu\\Documents\\C# Playground\\GroceryStore\\GroceryStore.Core\\GroceryStore.Core.csproj",
         "packagesPath": "C:\\Users\\UzorNwachukwu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\UzorNwachukwu\\Documents\\GroceryStore\\GroceryStore.Core\\obj\\",
+        "outputPath": "C:\\Users\\UzorNwachukwu\\Documents\\C# Playground\\GroceryStore\\GroceryStore.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\UzorNwachukwu\\AppData\\Roaming\\NuGet\\NuGet.Config",

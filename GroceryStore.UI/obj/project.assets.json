@@ -131,6 +131,16 @@
           }
         }
       },
+      "GroceryStore.Commons/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/GroceryStore.Commons.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GroceryStore.Commons.dll": {}
+        }
+      },
       "GroceryStore.Core/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -460,6 +470,11 @@
         "version.txt"
       ]
     },
+    "GroceryStore.Commons/1.0.0": {
+      "type": "project",
+      "path": "../GroceryStore.Commons/GroceryStore.Commons.csproj",
+      "msbuildProject": "../GroceryStore.Commons/GroceryStore.Commons.csproj"
+    },
     "GroceryStore.Core/1.0.0": {
       "type": "project",
       "path": "../GroceryStore.Core/GroceryStore.Core.csproj",
@@ -468,6 +483,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0-windows7.0": [
+      "GroceryStore.Commons >= 1.0.0",
       "GroceryStore.Core >= 1.0.0"
     ]
   },
@@ -477,11 +493,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\UzorNwachukwu\\Documents\\GroceryStore\\GroceryStore.UI\\GroceryStore.UI.csproj",
+      "projectUniqueName": "C:\\Users\\UzorNwachukwu\\Documents\\C# Playground\\GroceryStore\\GroceryStore.UI\\GroceryStore.UI.csproj",
       "projectName": "GroceryStore.UI",
-      "projectPath": "C:\\Users\\UzorNwachukwu\\Documents\\GroceryStore\\GroceryStore.UI\\GroceryStore.UI.csproj",
+      "projectPath": "C:\\Users\\UzorNwachukwu\\Documents\\C# Playground\\GroceryStore\\GroceryStore.UI\\GroceryStore.UI.csproj",
       "packagesPath": "C:\\Users\\UzorNwachukwu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\UzorNwachukwu\\Documents\\GroceryStore\\GroceryStore.UI\\obj\\",
+      "outputPath": "C:\\Users\\UzorNwachukwu\\Documents\\C# Playground\\GroceryStore\\GroceryStore.UI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\UzorNwachukwu\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -498,8 +514,11 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "projectReferences": {
-            "C:\\Users\\UzorNwachukwu\\Documents\\GroceryStore\\GroceryStore.Core\\GroceryStore.Core.csproj": {
-              "projectPath": "C:\\Users\\UzorNwachukwu\\Documents\\GroceryStore\\GroceryStore.Core\\GroceryStore.Core.csproj"
+            "C:\\Users\\UzorNwachukwu\\Documents\\C# Playground\\GroceryStore\\GroceryStore.Commons\\GroceryStore.Commons.csproj": {
+              "projectPath": "C:\\Users\\UzorNwachukwu\\Documents\\C# Playground\\GroceryStore\\GroceryStore.Commons\\GroceryStore.Commons.csproj"
+            },
+            "C:\\Users\\UzorNwachukwu\\Documents\\C# Playground\\GroceryStore\\GroceryStore.Core\\GroceryStore.Core.csproj": {
+              "projectPath": "C:\\Users\\UzorNwachukwu\\Documents\\C# Playground\\GroceryStore\\GroceryStore.Core\\GroceryStore.Core.csproj"
             }
           }
         }
