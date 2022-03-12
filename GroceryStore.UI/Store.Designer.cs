@@ -87,7 +87,6 @@ namespace GroceryStore.UI
             this.BtnClearRemove = new System.Windows.Forms.Button();
             this.TxtProductId = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvProducts)).BeginInit();
             this.panel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -173,7 +172,6 @@ namespace GroceryStore.UI
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.DgvProducts);
             this.groupBox1.Location = new System.Drawing.Point(32, 96);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(560, 217);
@@ -193,7 +191,7 @@ namespace GroceryStore.UI
             this.pName,
             this.Quantity,
             this.Price});
-            this.DgvProducts.Location = new System.Drawing.Point(0, 43);
+            this.DgvProducts.Location = new System.Drawing.Point(32, 139);
             this.DgvProducts.Name = "DgvProducts";
             this.DgvProducts.ReadOnly = true;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -206,7 +204,7 @@ namespace GroceryStore.UI
             this.DgvProducts.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DgvProducts.RowHeadersWidth = 51;
             this.DgvProducts.RowTemplate.Height = 29;
-            this.DgvProducts.Size = new System.Drawing.Size(560, 174);
+            this.DgvProducts.Size = new System.Drawing.Size(560, 350);
             this.DgvProducts.TabIndex = 0;
             // 
             // Id
@@ -546,9 +544,9 @@ namespace GroceryStore.UI
             this.GbAddProduct.Controls.Add(this.label9);
             this.GbAddProduct.Controls.Add(this.TxtProductName);
             this.GbAddProduct.Controls.Add(this.label8);
-            this.GbAddProduct.Location = new System.Drawing.Point(41, 346);
+            this.GbAddProduct.Location = new System.Drawing.Point(32, 487);
             this.GbAddProduct.Name = "GbAddProduct";
-            this.GbAddProduct.Size = new System.Drawing.Size(512, 181);
+            this.GbAddProduct.Size = new System.Drawing.Size(313, 223);
             this.GbAddProduct.TabIndex = 5;
             this.GbAddProduct.TabStop = false;
             // 
@@ -558,7 +556,7 @@ namespace GroceryStore.UI
             this.BtnAddProduct.FlatAppearance.BorderSize = 0;
             this.BtnAddProduct.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BtnAddProduct.ForeColor = System.Drawing.Color.White;
-            this.BtnAddProduct.Location = new System.Drawing.Point(155, 133);
+            this.BtnAddProduct.Location = new System.Drawing.Point(21, 181);
             this.BtnAddProduct.Name = "BtnAddProduct";
             this.BtnAddProduct.Size = new System.Drawing.Size(134, 29);
             this.BtnAddProduct.TabIndex = 7;
@@ -602,7 +600,7 @@ namespace GroceryStore.UI
             // 
             // NUDPrice
             // 
-            this.NUDPrice.Location = new System.Drawing.Point(262, 81);
+            this.NUDPrice.Location = new System.Drawing.Point(227, 81);
             this.NUDPrice.Name = "NUDPrice";
             this.NUDPrice.Size = new System.Drawing.Size(58, 27);
             this.NUDPrice.TabIndex = 5;
@@ -611,7 +609,7 @@ namespace GroceryStore.UI
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(262, 51);
+            this.label10.Location = new System.Drawing.Point(227, 51);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(43, 20);
             this.label10.TabIndex = 4;
@@ -619,7 +617,7 @@ namespace GroceryStore.UI
             // 
             // NUDQuantity
             // 
-            this.NUDQuantity.Location = new System.Drawing.Point(410, 81);
+            this.NUDQuantity.Location = new System.Drawing.Point(227, 183);
             this.NUDQuantity.Name = "NUDQuantity";
             this.NUDQuantity.Size = new System.Drawing.Size(58, 27);
             this.NUDQuantity.TabIndex = 3;
@@ -628,7 +626,7 @@ namespace GroceryStore.UI
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(410, 51);
+            this.label9.Location = new System.Drawing.Point(227, 135);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(70, 20);
             this.label9.TabIndex = 2;
@@ -678,9 +676,9 @@ namespace GroceryStore.UI
             this.GbRemoveProducts.Controls.Add(this.BtnRemove);
             this.GbRemoveProducts.Controls.Add(this.BtnClearRemove);
             this.GbRemoveProducts.Controls.Add(this.TxtProductId);
-            this.GbRemoveProducts.Location = new System.Drawing.Point(32, 575);
+            this.GbRemoveProducts.Location = new System.Drawing.Point(361, 495);
             this.GbRemoveProducts.Name = "GbRemoveProducts";
-            this.GbRemoveProducts.Size = new System.Drawing.Size(535, 154);
+            this.GbRemoveProducts.Size = new System.Drawing.Size(222, 254);
             this.GbRemoveProducts.TabIndex = 7;
             this.GbRemoveProducts.TabStop = false;
             // 
@@ -690,7 +688,7 @@ namespace GroceryStore.UI
             this.BtnRemove.FlatAppearance.BorderSize = 0;
             this.BtnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BtnRemove.ForeColor = System.Drawing.Color.White;
-            this.BtnRemove.Location = new System.Drawing.Point(350, 82);
+            this.BtnRemove.Location = new System.Drawing.Point(21, 192);
             this.BtnRemove.Name = "BtnRemove";
             this.BtnRemove.Size = new System.Drawing.Size(92, 29);
             this.BtnRemove.TabIndex = 8;
@@ -704,7 +702,7 @@ namespace GroceryStore.UI
             this.BtnClearRemove.FlatAppearance.BorderSize = 0;
             this.BtnClearRemove.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BtnClearRemove.ForeColor = System.Drawing.Color.White;
-            this.BtnClearRemove.Location = new System.Drawing.Point(226, 82);
+            this.BtnClearRemove.Location = new System.Drawing.Point(21, 133);
             this.BtnClearRemove.Name = "BtnClearRemove";
             this.BtnClearRemove.Size = new System.Drawing.Size(94, 29);
             this.BtnClearRemove.TabIndex = 6;
@@ -725,6 +723,7 @@ namespace GroceryStore.UI
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1378, 795);
+            this.Controls.Add(this.DgvProducts);
             this.Controls.Add(this.GbRemoveProducts);
             this.Controls.Add(this.GbAddProduct);
             this.Controls.Add(this.panel4);
@@ -740,7 +739,6 @@ namespace GroceryStore.UI
             this.Text = "Store";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DgvProducts)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
