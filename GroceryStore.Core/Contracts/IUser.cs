@@ -4,8 +4,8 @@ namespace GroceryStore.Core.Contracts
 {
     public interface IUser
     {
-        string Name { get; set; }
-        string Password { get; set; }
-        Role Role { get; set; }
+        string Name { get; }
+        string Password { get; }
+        Role Role { get; }
     }
 }

@@ -55,6 +55,7 @@ namespace GroceryStore.UI
                 return;
             }
             MessageBox.Show("Product successfull added");
+            ClearInputs();
             RenderProducts();
         }
 
@@ -65,7 +66,7 @@ namespace GroceryStore.UI
             RenderProducts();
         }
 
-        private void BtnSell_Click(object sender, EventArgs e)
+        private void BtnAddToCart_Click(object sender, EventArgs e)
         {
 
             var wasProductAdded = ProductStore.AddProductToCart(TxtProductSellId.Text, int.Parse(LblQty.Text));
@@ -76,9 +77,10 @@ namespace GroceryStore.UI
                 return;
             }
 
+            LblTotalPrice.Text = ProductStore.Cart.TotalPrice.ToString();
             MessageBox.Show("Product Added SuccessFully", "Success");
+            ClearInputs();
             RenderCart();
-
         }
 
         private void BtnAdd_Click(object sender, EventArgs e)
@@ -109,7 +111,7 @@ namespace GroceryStore.UI
 
             if (receiptContent != "")
             {
-                receiptContent += $"\n Total Price: {TotalPrice}";
+                receiptContent += $"\n Total Price: {ProductStore.Cart.TotalPrice}";
                 FileHandler.PrintFile(receiptContent, printPath);
                 ProductStore.ReduceProductQuantityOnCheckOut(ProductStore.Cart.MyCart);
                 MessageBox.Show($"Receipt successfull printed to {printPath}");
@@ -125,16 +127,47 @@ namespace GroceryStore.UI
         private string PopulateReceiptContent()
         {
             var receiptContent = new StringBuilder();
-            int count = 1;
+            int count = 0;
 
             foreach (var item in ProductStore.Cart.MyCart)
             {
+                count++;
                 receiptContent.AppendLine($"" +
                     $"{count} - Name: {item.Name} \r Quantity: {item.Quantity} \r Unit Price: {item.Price} \r" +
                     $"Total Price: {item.Price * item.Quantity}");
             }
 
             return receiptContent.ToString();
+        }
+
+        private void ClearInputs()
+        {
+            TxtProductName.Text = "";
+            NUDPrice.Value = 0;
+            NUDQuantity.Value = 0;
+
+            TxtProductSellId.Text = "";
+            LblQty.Text = "0";
+
+            TxtProductId.Text = "";
+        }
+
+        private void BtnClear_Click(object sender, EventArgs e)
+        {
+            TxtProductName.Text = "";
+            NUDPrice.Value = 0;
+            NUDQuantity.Value = 0;
+        }
+
+        private void BtnClearRemove_Click(object sender, EventArgs e)
+        {
+            TxtProductId.Text = "";
+        }
+
+        private void BtnClearSell_Click(object sender, EventArgs e)
+        {
+            TxtProductSellId.Text = "";
+            LblQty.Text = "0";
         }
     }
 }

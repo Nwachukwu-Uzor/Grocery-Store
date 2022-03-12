@@ -29,8 +29,8 @@ namespace GroceryStore.UI
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -43,7 +43,7 @@ namespace GroceryStore.UI
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.BtnClearSell = new System.Windows.Forms.Button();
-            this.BtnSell = new System.Windows.Forms.Button();
+            this.BtnAddToCart = new System.Windows.Forms.Button();
             this.BtnAdd = new System.Windows.Forms.Button();
             this.BtnSubtract = new System.Windows.Forms.Button();
             this.LblQty = new System.Windows.Forms.Label();
@@ -133,6 +133,8 @@ namespace GroceryStore.UI
             // 
             // DgvProducts
             // 
+            this.DgvProducts.AllowUserToAddRows = false;
+            this.DgvProducts.AllowUserToDeleteRows = false;
             this.DgvProducts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DgvProducts.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -141,16 +143,18 @@ namespace GroceryStore.UI
             this.pName,
             this.Quantity,
             this.Price});
+            this.DgvProducts.Enabled = false;
             this.DgvProducts.Location = new System.Drawing.Point(0, 43);
             this.DgvProducts.Name = "DgvProducts";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvProducts.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.DgvProducts.ReadOnly = true;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvProducts.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.DgvProducts.RowHeadersWidth = 51;
             this.DgvProducts.RowTemplate.Height = 29;
             this.DgvProducts.Size = new System.Drawing.Size(560, 174);
@@ -161,24 +165,28 @@ namespace GroceryStore.UI
             this.Id.HeaderText = "ID";
             this.Id.MinimumWidth = 6;
             this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
             // 
             // pName
             // 
             this.pName.HeaderText = "NAME";
             this.pName.MinimumWidth = 6;
             this.pName.Name = "pName";
+            this.pName.ReadOnly = true;
             // 
             // Quantity
             // 
             this.Quantity.HeaderText = "QUANTITY";
             this.Quantity.MinimumWidth = 6;
             this.Quantity.Name = "Quantity";
+            this.Quantity.ReadOnly = true;
             // 
             // Price
             // 
             this.Price.HeaderText = "PRICE";
             this.Price.MinimumWidth = 6;
             this.Price.Name = "Price";
+            this.Price.ReadOnly = true;
             // 
             // panel2
             // 
@@ -204,7 +212,7 @@ namespace GroceryStore.UI
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.BtnClearSell);
-            this.groupBox2.Controls.Add(this.BtnSell);
+            this.groupBox2.Controls.Add(this.BtnAddToCart);
             this.groupBox2.Controls.Add(this.BtnAdd);
             this.groupBox2.Controls.Add(this.BtnSubtract);
             this.groupBox2.Controls.Add(this.LblQty);
@@ -230,21 +238,22 @@ namespace GroceryStore.UI
             this.BtnClearSell.TabIndex = 7;
             this.BtnClearSell.Text = "Clear";
             this.BtnClearSell.UseVisualStyleBackColor = false;
+            this.BtnClearSell.Click += new System.EventHandler(this.BtnClearSell_Click);
             // 
-            // BtnSell
+            // BtnAddToCart
             // 
-            this.BtnSell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.BtnSell.FlatAppearance.BorderSize = 0;
-            this.BtnSell.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BtnSell.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnSell.ForeColor = System.Drawing.Color.White;
-            this.BtnSell.Location = new System.Drawing.Point(350, 107);
-            this.BtnSell.Name = "BtnSell";
-            this.BtnSell.Size = new System.Drawing.Size(89, 30);
-            this.BtnSell.TabIndex = 5;
-            this.BtnSell.Text = "Sell";
-            this.BtnSell.UseVisualStyleBackColor = false;
-            this.BtnSell.Click += new System.EventHandler(this.BtnSell_Click);
+            this.BtnAddToCart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.BtnAddToCart.FlatAppearance.BorderSize = 0;
+            this.BtnAddToCart.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnAddToCart.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnAddToCart.ForeColor = System.Drawing.Color.White;
+            this.BtnAddToCart.Location = new System.Drawing.Point(344, 107);
+            this.BtnAddToCart.Name = "BtnAddToCart";
+            this.BtnAddToCart.Size = new System.Drawing.Size(95, 33);
+            this.BtnAddToCart.TabIndex = 5;
+            this.BtnAddToCart.Text = "Add";
+            this.BtnAddToCart.UseVisualStyleBackColor = false;
+            this.BtnAddToCart.Click += new System.EventHandler(this.BtnAddToCart_Click);
             // 
             // BtnAdd
             // 
@@ -322,7 +331,7 @@ namespace GroceryStore.UI
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(92, 20);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Sell Product";
+            this.label3.Text = "Add To Cart";
             // 
             // panel4
             // 
@@ -420,6 +429,9 @@ namespace GroceryStore.UI
             // 
             // DgvCart
             // 
+            this.DgvCart.AllowUserToAddRows = false;
+            this.DgvCart.AllowUserToDeleteRows = false;
+            this.DgvCart.AllowUserToResizeColumns = false;
             this.DgvCart.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DgvCart.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DgvCart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -429,16 +441,17 @@ namespace GroceryStore.UI
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
             this.TotalPrice});
+            this.DgvCart.Enabled = false;
             this.DgvCart.Location = new System.Drawing.Point(0, 49);
             this.DgvCart.Name = "DgvCart";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvCart.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvCart.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.DgvCart.RowHeadersWidth = 51;
             this.DgvCart.RowTemplate.Height = 29;
             this.DgvCart.Size = new System.Drawing.Size(560, 168);
@@ -517,6 +530,7 @@ namespace GroceryStore.UI
             this.BtnClear.TabIndex = 6;
             this.BtnClear.Text = "Clear";
             this.BtnClear.UseVisualStyleBackColor = false;
+            this.BtnClear.Click += new System.EventHandler(this.BtnClear_Click);
             // 
             // NUDPrice
             // 
@@ -647,6 +661,7 @@ namespace GroceryStore.UI
             this.BtnClearRemove.TabIndex = 6;
             this.BtnClearRemove.Text = "Clear";
             this.BtnClearRemove.UseVisualStyleBackColor = false;
+            this.BtnClearRemove.Click += new System.EventHandler(this.BtnClearRemove_Click);
             // 
             // TxtProductId
             // 
@@ -715,7 +730,7 @@ namespace GroceryStore.UI
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button BtnSell;
+        private System.Windows.Forms.Button BtnAddToCart;
         private System.Windows.Forms.Button BtnAdd;
         private System.Windows.Forms.Button BtnSubtract;
         private System.Windows.Forms.Label LblQty;

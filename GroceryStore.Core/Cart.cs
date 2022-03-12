@@ -32,10 +32,10 @@ namespace GroceryStore.Core
             {
                 Product prod = new Product(id, name, quantity) { Price = price };
                 MyCart.Add(prod);
-                return;
+            } else
+            {
+                product.Quantity += quantity;
             }
-                
-            product.Quantity += quantity;
 
             TotalPrice = CalculateTotalPrice();
         }

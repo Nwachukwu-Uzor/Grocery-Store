@@ -47,7 +47,7 @@ namespace GroceryStore.Core
 
         public List<Product> GetProducts()
         {
-            sql = "select * from products";
+            sql = "select * from products where quantity > 0";
 
             var result = new List<Product>();
 
